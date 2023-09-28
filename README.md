@@ -1,12 +1,12 @@
 # STM32WL5x Mode Timer
 
-The STM32WL5x Mode Timer
+The STM32WL5x Mode Timer is a simple module to start and stop an operation on a PRI basis.  This operation can be something akin recording samples from a microphone for 10 seconds out of every minute.
 
 ___
 
 ## Conceptual Design
 
-
+Many of the timers on STM32 MCUs offer a continuous running mode.  The timer will count up until a value (called the auto-reload value) is reached.  Then the timer resets and continues counting.  The timers also offer a compare-match value which can triggers if the counter's value matches.  The timer can be configured to fire an IRQ on both of these events.  If the auto-reload value is treated as a length for a period and the compare-match value is used to denote the end of a pulse within that period (where resetting on the auto-reload value denotes the beginning of a pulse), then an action can be triggered to start, run for an amount of time and stop, and restart again after a period (PRI).
 
 ___
 
