@@ -53,8 +53,8 @@ LPTIM_HandleTypeDef hlptim1;
 static void MX_LPTIM1_Init(void);
 /* USER CODE BEGIN PFP */
 
-void pulse_start(void);
-void pulse_end(void);
+void enterModeCallback(void);
+void exitModeCallback(void);
 
 /* USER CODE END PFP */
 
@@ -98,7 +98,7 @@ int main(void)
   // set to call event_start() when the pulse starts and
   // call event_end() when the pulse ends (turns blue led
   // on and off).
-  modeTimer_configure(250, 250/2, &(pulse_start), &(pulse_end));
+  modeTimer_configure(250, 250/2, &(enterModeCallback), &(exitModeCallback));
 
   // start the mode timer
   modeTimer_start();
@@ -173,7 +173,7 @@ void HAL_LPTIM_AutoReloadMatchCallback(LPTIM_HandleTypeDef *hlptim)
 /*
  * Activate the blue LED at start of pulse.
  */
-void pulse_start(void)
+void enterModeCallback(void)
 {
 	activate_led(BLUE_LED);
 }
@@ -181,7 +181,7 @@ void pulse_start(void)
 /*
  * Deactivate the blue LED at end of pulse.
  */
-void pulse_end(void)
+void exitModeCallback(void)
 {
 	deactivate_led(BLUE_LED);
 }
