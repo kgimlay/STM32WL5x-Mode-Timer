@@ -32,11 +32,11 @@ This configuration will update the timer at 250 Hz (32,000 Hz LSI and 128 presca
 
 ### Adding to Your STM32CubeMX Project
 
-Now you are ready to add the module code.  Create a new source folder and add the module's header files to the compiler's include directory.
+Now you are ready to add the [module code](Modules).  Create a new source folder and add the module's header files to the compiler's include directory.
 
 1. Right click on the sub-project for the core you want to use the module in.
 2. Navigate to New > Source Folder.
-3. Name the new Source Folder Modules.  Copy the Mode_Timer folder into here.
+3. Name the new Source Folder Modules.  Copy the [Mode_Timer](Modules) folder into here.
 4. Right click again on the same sub-project.  Navigate to Properties.
 5. On the left side, navigate to C/C++ Build > Settings.
 6. Within that window navigate to MCU GCC Compiler > Include Paths.
@@ -55,7 +55,7 @@ Now you are ready to add the module code.  Create a new source folder and add th
 
 ### Example Usage
 
-A very simple usage example STM32CubeMX project is provided.  For a more interesting experience I have included an additional module called LED Debug.  All it does is provide some basic functionality to turn on and off the LEDs on the STM32WL55JC development board.  The example turns on the blue LED when the mode timer's pulse starts, and turns it off when the pulse ends.  This can be seen in the following callback functions.
+A very simple usage [example STM32CubeMX project](Example) is provided.  For a more interesting experience I have included an additional module called LED Debug.  All it does is provide some basic functionality to turn on and off the LEDs on the STM32WL55JC development board.  The example turns on the blue LED when the mode timer's pulse starts, and turns it off when the pulse ends.  This can be seen in the following callback functions.
 
     /*
      * Activate the blue LED at start of pulse.
